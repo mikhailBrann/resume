@@ -12,40 +12,106 @@ ul {
     list-style: none;
 }
 
+.reume-main-wrapp {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    border-left: 3px solid #80008036;
+    font-family: sans-serif;
+}
+
 .resume-top {
     display: flex;
+    box-sizing: border-box;
+    gap: 20px;
 }
 
-
-.resum-top-left.photo {
-    box-sizing: border-box;
-    border-radius: 40px;
-    overflow: hidden;
-}
-
-
-.resum-top-right.text {
-    box-sizing: border-box;
-    padding-left: 30px;
+.resum-top-left.photo img {
+    display: block;
+    width: 100%;
 }
 
 .resume-center {
     display: grid;
-    grid-template-columns: 1fr 2fr 9fr;
-    column-gap: 15px;
-    margin-bottom: 20px;
+    grid-template-columns: 1fr auto;
+    margin: 20px 0;
+    gap: 20px;
 }
 
+.skills {
+    order: 2;
+}
+
+.skills ul {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 10px;
+}
+
+.skills ul li {
+    box-sizing: border-box;
+    display: inline-block;
+    background: green;
+    color: #fff;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
 
 .resume-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.works ul {
     display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.resume-bottom > *:first-child {
-    width: 60%;
-    margin-right: 20px;
+.reume-main-wrapp a {
+    text-decoration: none;
+    color: #800080d6;
 }
 
-.resume-bottom > *:last-child {
-    flex: 1;
+.profession {
+    font-size: 24px;
+}
+
+.resum-top-right ul {
+    display: grid;
+    gap: 6px;
+}
+
+@media screen and (max-width: 930px) {
+    .resume-center {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .skills ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .resume-top {
+        flex-direction: column;
+    }
+
+    .resum-top-left.photo img {
+        filter: contrast(0.9);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .reume-main-wrapp {
+        padding: 15px;
+    }
 }
